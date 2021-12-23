@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A8724102774AF5000FC1E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A87240F2774AF5000FC1E5A /* AppDelegate.swift */; };
+		9A8724122774AF5000FC1E5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8724112774AF5000FC1E5A /* SceneDelegate.swift */; };
+		9A8724142774AF5000FC1E5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8724132774AF5000FC1E5A /* ViewController.swift */; };
+		9A8724172774AF5000FC1E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8724152774AF5000FC1E5A /* Main.storyboard */; };
+		9A8724192774AF5300FC1E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8724182774AF5300FC1E5A /* Assets.xcassets */; };
+		9A87241C2774AF5300FC1E5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A87241A2774AF5300FC1E5A /* LaunchScreen.storyboard */; };
+		9A8724272774AF5300FC1E5A /* tuwaiq_academyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8724262774AF5300FC1E5A /* tuwaiq_academyTests.swift */; };
+		9A8724312774AF5300FC1E5A /* tuwaiq_academyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8724302774AF5300FC1E5A /* tuwaiq_academyUITests.swift */; };
+		9A8724332774AF5300FC1E5A /* tuwaiq_academyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8724322774AF5300FC1E5A /* tuwaiq_academyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A8724232774AF5300FC1E5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A8724042774AF5000FC1E5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A87240B2774AF5000FC1E5A;
+			remoteInfo = "tuwaiq-academy";
+		};
+		9A87242D2774AF5300FC1E5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A8724042774AF5000FC1E5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A87240B2774AF5000FC1E5A;
+			remoteInfo = "tuwaiq-academy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A87240C2774AF5000FC1E5A /* tuwaiq-academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tuwaiq-academy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A87240F2774AF5000FC1E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A8724112774AF5000FC1E5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9A8724132774AF5000FC1E5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A8724162774AF5000FC1E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A8724182774AF5300FC1E5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A87241B2774AF5300FC1E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A87241D2774AF5300FC1E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A8724222774AF5300FC1E5A /* tuwaiq-academyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tuwaiq-academyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8724262774AF5300FC1E5A /* tuwaiq_academyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tuwaiq_academyTests.swift; sourceTree = "<group>"; };
+		9A87242C2774AF5300FC1E5A /* tuwaiq-academyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tuwaiq-academyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8724302774AF5300FC1E5A /* tuwaiq_academyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tuwaiq_academyUITests.swift; sourceTree = "<group>"; };
+		9A8724322774AF5300FC1E5A /* tuwaiq_academyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tuwaiq_academyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A8724092774AF5000FC1E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A87241F2774AF5300FC1E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8724292774AF5300FC1E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A8724032774AF5000FC1E5A = {
+			isa = PBXGroup;
+			children = (
+				9A87240E2774AF5000FC1E5A /* tuwaiq-academy */,
+				9A8724252774AF5300FC1E5A /* tuwaiq-academyTests */,
+				9A87242F2774AF5300FC1E5A /* tuwaiq-academyUITests */,
+				9A87240D2774AF5000FC1E5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A87240D2774AF5000FC1E5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A87240C2774AF5000FC1E5A /* tuwaiq-academy.app */,
+				9A8724222774AF5300FC1E5A /* tuwaiq-academyTests.xctest */,
+				9A87242C2774AF5300FC1E5A /* tuwaiq-academyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A87240E2774AF5000FC1E5A /* tuwaiq-academy */ = {
+			isa = PBXGroup;
+			children = (
+				9A87240F2774AF5000FC1E5A /* AppDelegate.swift */,
+				9A8724112774AF5000FC1E5A /* SceneDelegate.swift */,
+				9A8724132774AF5000FC1E5A /* ViewController.swift */,
+				9A8724152774AF5000FC1E5A /* Main.storyboard */,
+				9A8724182774AF5300FC1E5A /* Assets.xcassets */,
+				9A87241A2774AF5300FC1E5A /* LaunchScreen.storyboard */,
+				9A87241D2774AF5300FC1E5A /* Info.plist */,
+			);
+			path = "tuwaiq-academy";
+			sourceTree = "<group>";
+		};
+		9A8724252774AF5300FC1E5A /* tuwaiq-academyTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A8724262774AF5300FC1E5A /* tuwaiq_academyTests.swift */,
+			);
+			path = "tuwaiq-academyTests";
+			sourceTree = "<group>";
+		};
+		9A87242F2774AF5300FC1E5A /* tuwaiq-academyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A8724302774AF5300FC1E5A /* tuwaiq_academyUITests.swift */,
+				9A8724322774AF5300FC1E5A /* tuwaiq_academyUITestsLaunchTests.swift */,
+			);
+			path = "tuwaiq-academyUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A87240B2774AF5000FC1E5A /* tuwaiq-academy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A8724362774AF5300FC1E5A /* Build configuration list for PBXNativeTarget "tuwaiq-academy" */;
+			buildPhases = (
+				9A8724082774AF5000FC1E5A /* Sources */,
+				9A8724092774AF5000FC1E5A /* Frameworks */,
+				9A87240A2774AF5000FC1E5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tuwaiq-academy";
+			productName = "tuwaiq-academy";
+			productReference = 9A87240C2774AF5000FC1E5A /* tuwaiq-academy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A8724212774AF5300FC1E5A /* tuwaiq-academyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A8724392774AF5300FC1E5A /* Build configuration list for PBXNativeTarget "tuwaiq-academyTests" */;
+			buildPhases = (
+				9A87241E2774AF5300FC1E5A /* Sources */,
+				9A87241F2774AF5300FC1E5A /* Frameworks */,
+				9A8724202774AF5300FC1E5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A8724242774AF5300FC1E5A /* PBXTargetDependency */,
+			);
+			name = "tuwaiq-academyTests";
+			productName = "tuwaiq-academyTests";
+			productReference = 9A8724222774AF5300FC1E5A /* tuwaiq-academyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A87242B2774AF5300FC1E5A /* tuwaiq-academyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A87243C2774AF5300FC1E5A /* Build configuration list for PBXNativeTarget "tuwaiq-academyUITests" */;
+			buildPhases = (
+				9A8724282774AF5300FC1E5A /* Sources */,
+				9A8724292774AF5300FC1E5A /* Frameworks */,
+				9A87242A2774AF5300FC1E5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A87242E2774AF5300FC1E5A /* PBXTargetDependency */,
+			);
+			name = "tuwaiq-academyUITests";
+			productName = "tuwaiq-academyUITests";
+			productReference = 9A87242C2774AF5300FC1E5A /* tuwaiq-academyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A8724042774AF5000FC1E5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					9A87240B2774AF5000FC1E5A = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					9A8724212774AF5300FC1E5A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 9A87240B2774AF5000FC1E5A;
+					};
+					9A87242B2774AF5300FC1E5A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 9A87240B2774AF5000FC1E5A;
+					};
+				};
+			};
+			buildConfigurationList = 9A8724072774AF5000FC1E5A /* Build configuration list for PBXProject "tuwaiq-academy" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A8724032774AF5000FC1E5A;
+			productRefGroup = 9A87240D2774AF5000FC1E5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A87240B2774AF5000FC1E5A /* tuwaiq-academy */,
+				9A8724212774AF5300FC1E5A /* tuwaiq-academyTests */,
+				9A87242B2774AF5300FC1E5A /* tuwaiq-academyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A87240A2774AF5000FC1E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A87241C2774AF5300FC1E5A /* LaunchScreen.storyboard in Resources */,
+				9A8724192774AF5300FC1E5A /* Assets.xcassets in Resources */,
+				9A8724172774AF5000FC1E5A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8724202774AF5300FC1E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A87242A2774AF5300FC1E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A8724082774AF5000FC1E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8724142774AF5000FC1E5A /* ViewController.swift in Sources */,
+				9A8724102774AF5000FC1E5A /* AppDelegate.swift in Sources */,
+				9A8724122774AF5000FC1E5A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A87241E2774AF5300FC1E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8724272774AF5300FC1E5A /* tuwaiq_academyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8724282774AF5300FC1E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8724332774AF5300FC1E5A /* tuwaiq_academyUITestsLaunchTests.swift in Sources */,
+				9A8724312774AF5300FC1E5A /* tuwaiq_academyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A8724242774AF5300FC1E5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A87240B2774AF5000FC1E5A /* tuwaiq-academy */;
+			targetProxy = 9A8724232774AF5300FC1E5A /* PBXContainerItemProxy */;
+		};
+		9A87242E2774AF5300FC1E5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A87240B2774AF5000FC1E5A /* tuwaiq-academy */;
+			targetProxy = 9A87242D2774AF5300FC1E5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A8724152774AF5000FC1E5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A8724162774AF5000FC1E5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A87241A2774AF5300FC1E5A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A87241B2774AF5300FC1E5A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A8724342774AF5300FC1E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A8724352774AF5300FC1E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A8724372774AF5300FC1E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tuwaiq-academy/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tuwaiq-iosa.tuwaiq-academy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A8724382774AF5300FC1E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tuwaiq-academy/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tuwaiq-iosa.tuwaiq-academy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A87243A2774AF5300FC1E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tuwaiq-iosa.tuwaiq-academyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tuwaiq-academy.app/tuwaiq-academy";
+			};
+			name = Debug;
+		};
+		9A87243B2774AF5300FC1E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tuwaiq-iosa.tuwaiq-academyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tuwaiq-academy.app/tuwaiq-academy";
+			};
+			name = Release;
+		};
+		9A87243D2774AF5300FC1E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tuwaiq-iosa.tuwaiq-academyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tuwaiq-academy";
+			};
+			name = Debug;
+		};
+		9A87243E2774AF5300FC1E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tuwaiq-iosa.tuwaiq-academyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tuwaiq-academy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A8724072774AF5000FC1E5A /* Build configuration list for PBXProject "tuwaiq-academy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A8724342774AF5300FC1E5A /* Debug */,
+				9A8724352774AF5300FC1E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A8724362774AF5300FC1E5A /* Build configuration list for PBXNativeTarget "tuwaiq-academy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A8724372774AF5300FC1E5A /* Debug */,
+				9A8724382774AF5300FC1E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A8724392774AF5300FC1E5A /* Build configuration list for PBXNativeTarget "tuwaiq-academyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A87243A2774AF5300FC1E5A /* Debug */,
+				9A87243B2774AF5300FC1E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A87243C2774AF5300FC1E5A /* Build configuration list for PBXNativeTarget "tuwaiq-academyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A87243D2774AF5300FC1E5A /* Debug */,
+				9A87243E2774AF5300FC1E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A8724042774AF5000FC1E5A /* Project object */;
+}
