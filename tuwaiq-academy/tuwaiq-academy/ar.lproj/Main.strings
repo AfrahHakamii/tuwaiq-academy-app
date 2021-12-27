@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Name :"; ObjectID = "3n3-nB-zqx"; */
+"3n3-nB-zqx.text" = "Name :";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "7mT-Gn-lFh"; */
+"7mT-Gn-lFh.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7mT-Gn-lFh"; */
+"7mT-Gn-lFh.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Bio:"; ObjectID = "BuK-FB-Cdk"; */
+"BuK-FB-Cdk.text" = "Bio:";
+
+/* Class = "UILabel"; text = "Name :"; ObjectID = "Pfg-BZ-3hf"; */
+"Pfg-BZ-3hf.text" = "Name :";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "U6h-bC-mcV"; */
+"U6h-bC-mcV.text" = "City";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "ihF-uY-qdY"; */
+"ihF-uY-qdY.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ihF-uY-qdY"; */
+"ihF-uY-qdY.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Name :"; ObjectID = "tza-TU-EGx"; */
+"tza-TU-EGx.text" = "Name :";
+
+/* Class = "UILabel"; text = "Name :"; ObjectID = "upr-c0-fx2"; */
+"upr-c0-fx2.text" = "Name :";
