@@ -25,8 +25,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var bioTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +36,6 @@ class RegisterViewController: UIViewController {
            let imageData = image.jpegData(compressionQuality: 0.75),
            let name = nameTextField.text,
            let email = emailTextField.text,
-           let bio = bioTextField.text,
-           let city = cityTextField.text,
            let password = passwordTextField.text,
            let confirmPassword = confirmPasswordTextField.text,
            password == confirmPassword {
@@ -67,8 +63,6 @@ class RegisterViewController: UIViewController {
                                     "id":authResult.user.uid,
                                     "name":name,
                                     "email":email,
-                                    "bio":bio,
-                                    "city":city,
                                     "imageUrl":url.absoluteString
                                 ]
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
