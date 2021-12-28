@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing View Controller-->
         <scene sceneID="0bm-se-DFZ">
             <objects>
-                <viewController id="zJo-xh-f4V" customClass="ViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zJo-xh-f4V" customClass="LandingViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cpe-G1-TS7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,20 +46,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLn-5A-fWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1134" y="-1639"/>
+            <point key="canvasLocation" x="-775" y="-1648"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="aBl-fH-mFz">
             <objects>
-                <viewController id="cdD-BD-3tF" sceneMemberID="viewController">
+                <viewController id="cdD-BD-3tF" customClass="RegisterViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ShZ-Rs-hvl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHk-0Y-dHc">
-                                <rect key="frame" x="106" y="45" width="162" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tza-TU-EGx">
                                 <rect key="frame" x="36" y="187" width="54" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -143,6 +139,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Registe"/>
+                                <connections>
+                                    <action selector="handleRegister:" destination="cdD-BD-3tF" eventType="touchUpInside" id="0NW-Ou-16d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wa-YR-djL">
                                 <rect key="frame" x="54" y="558" width="268" height="31"/>
@@ -153,26 +152,39 @@
                                     <segue destination="Nia-eS-B8V" kind="show" id="paf-B8-TOg"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHk-0Y-dHc">
+                                <rect key="frame" x="107" y="38" width="162" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dAn-bf-pKh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rky-6b-3f8"/>
+                    <connections>
+                        <outlet property="bioTextField" destination="wJn-Jj-u70" id="NK0-ou-AdV"/>
+                        <outlet property="cityTextField" destination="R0B-sX-gHe" id="LPP-42-yW9"/>
+                        <outlet property="confirmPasswordTextField" destination="Ybo-SM-7O1" id="xEu-j9-hpq"/>
+                        <outlet property="emailTextField" destination="PtW-ea-1Yb" id="Wc2-UN-MAb"/>
+                        <outlet property="nameTextField" destination="hcF-Ga-3lO" id="sZV-hg-fHs"/>
+                        <outlet property="passwordTextField" destination="lwY-aj-kme" id="OkL-Pt-Nlg"/>
+                        <outlet property="userImageView" destination="gHk-0Y-dHc" id="AYc-wA-WB2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JE-hH-sWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="-1639"/>
+            <point key="canvasLocation" x="278" y="-1648"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="1HF-mP-KSt">
             <objects>
-                <viewController id="sKb-5N-52P" sceneMemberID="viewController">
+                <viewController id="sKb-5N-52P" customClass="HomeViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HT1-oA-MIv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtO-la-e0j">
-                                <rect key="frame" x="36" y="260" width="303" height="182"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtO-la-e0j">
+                                <rect key="frame" x="36" y="192" width="303" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -182,18 +194,30 @@
                         <viewLayoutGuide key="safeArea" id="wkD-fX-TeK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ciq-gt-VH7"/>
+                    <navigationItem key="navigationItem" id="Ciq-gt-VH7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="FNY-nh-Gf6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="M7O-nf-Dbu">
+                                <rect key="frame" x="276" y="5" width="83" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Logout"/>
+                                <connections>
+                                    <action selector="handleLogout:" destination="sKb-5N-52P" eventType="touchUpInside" id="FKe-eN-YFv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P3-gA-BwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-456.80000000000001" y="-501.49925037481262"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="1KU-if-du4">
             <objects>
-                <viewController id="Nia-eS-B8V" sceneMemberID="viewController">
+                <viewController id="Nia-eS-B8V" customClass="LoginViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tbw-fD-XHI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuwaiq Academy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yee-8B-hZP">
@@ -234,6 +258,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign in "/>
+                                <connections>
+                                    <action selector="handleLogin:" destination="Nia-eS-B8V" eventType="touchUpInside" id="H3i-hB-K69"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbU-xS-R0N">
                                 <rect key="frame" x="53" y="495" width="268" height="31"/>
@@ -249,15 +276,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="txc-yg-NUG"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Vyt-Pa-3WJ" id="PxA-3c-g5C"/>
+                        <outlet property="passwordTextField" destination="Mq7-em-uWA" id="dwI-Vr-v6w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDc-9A-TMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="-764"/>
+            <point key="canvasLocation" x="278" y="-857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jCF-6Y-ssB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Xb-1o-qEQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LandingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="6Xb-1o-qEQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b6h-SN-mHt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -275,7 +306,7 @@
         <!--Navigation Controller-->
         <scene sceneID="aH8-62-zJN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tkE-Lk-2Mz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="tkE-Lk-2Mz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Tx-wd-8PS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -292,8 +323,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="paf-B8-TOg"/>
-        <segue reference="Ger-Ee-r7t"/>
+        <segue reference="8wN-ly-E5I"/>
+        <segue reference="kAT-dY-smM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
