@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
-            userImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            userImageView.layer.borderColor = UIColor.systemGray2.cgColor
             userImageView.layer.borderWidth = 3.0
             userImageView.layer.cornerRadius = userImageView.bounds.height / 2
             userImageView.layer.masksToBounds = true
@@ -42,6 +42,8 @@ class RegisterViewController: UIViewController {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let error = error {
+                    Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                     print("Registration Auth Error",error.localizedDescription)
                 }
                 if let authResult = authResult {
@@ -50,10 +52,16 @@ class RegisterViewController: UIViewController {
                     uploadMeta.contentType = "image/jpeg"
                     storageRef.putData(imageData, metadata: uploadMeta) { storageMeta, error in
                         if let error = error {
+                            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                             print("Registration Storage Error",error.localizedDescription)
                         }
                         storageRef.downloadURL { url, error in
                             if let error = error {
+                                Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                                 print("Registration Storage Download Url Error",error.localizedDescription)
                             }
                             if let url = url {
@@ -67,6 +75,8 @@ class RegisterViewController: UIViewController {
                                 ]
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
                                     if let error = error {
+                                        Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                                         print("Registration Database error",error.localizedDescription)
                                     }else {
                                         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
@@ -84,13 +94,10 @@ class RegisterViewController: UIViewController {
         }
     }
 }
-
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
     @objc func selectImage() {
         showAlert()
     }
-    
     func showAlert() {
         let alert = UIAlertController(title: "choose Profile Picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
@@ -108,7 +115,6 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         self.present(alert, animated: true, completion: nil)
     }
     func getImage( from sourceType: UIImagePickerController.SourceType) {
-        
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             imagePickerController.sourceType = sourceType
             self.present(imagePickerController, animated: true, completion: nil)
