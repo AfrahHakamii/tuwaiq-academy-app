@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     var posts = [Post]()
     var selectedPost:Post?
     var selectedPostImage:UIImage?
-    
+    var selectedUserImage:UIImage?
     @IBOutlet weak var postsTableView: UITableView! {
         didSet {
             postsTableView.delegate = self
@@ -38,7 +38,6 @@ class HomeViewController: UIViewController {
                             ref.collection("users").document(userId).getDocument { userSnapshot, error in
                                 if let error = error {
                                     print("ERROR user Data",error.localizedDescription)
-                                    
                                 }
                                 if let userSnapshot = userSnapshot,
                                    let userData = userSnapshot.data(){
@@ -86,25 +85,23 @@ class HomeViewController: UIViewController {
             } catch  {
                 print("ERROR in signout",error.localizedDescription)
             }
-            
         }
-        
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let identifier = segue.identifier {
                 if identifier == "toPostVC" {
                     let vc = segue.destination as! PostViewController
                     vc.selectedPost = selectedPost
                     vc.selectedPostImage = selectedPostImage
+                    vc.selectedUserImage = selectedUserImage
                 }else if identifier == "toDetailsVC"{
                     let vc = segue.destination as! DetailsViewController
                     vc.selectedPost = selectedPost
                     vc.selectedPostImage = selectedPostImage
+                    vc.selectedUserImage = selectedUserImage
                 }
             }
-         
         }
     }
-    
     extension HomeViewController: UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return posts.count
@@ -114,8 +111,6 @@ class HomeViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
             return cell.configure(with: posts[indexPath.row])
         }
-        
-        
     }
     extension HomeViewController: UITableViewDelegate {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -124,13 +119,13 @@ class HomeViewController: UIViewController {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let cell = tableView.cellForRow(at: indexPath) as! PostCell
             selectedPostImage = cell.postImageView.image
+            selectedUserImage = cell.userImageView.image
             selectedPost = posts[indexPath.row]
             if let currentUser = Auth.auth().currentUser,
                currentUser.uid == posts[indexPath.row].user.id{
               performSegue(withIdentifier: "toPostVC", sender: self)
             }else {
                 performSegue(withIdentifier: "toDetailsVC", sender: self)
-                
             }
         }
     }

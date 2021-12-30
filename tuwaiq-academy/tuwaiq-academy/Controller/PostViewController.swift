@@ -5,12 +5,12 @@
 //  Created by Afrah Omar on 24/05/1443 AH.
 //
 
-
 import UIKit
 import Firebase
 class PostViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
+    var selectedUserImage:UIImage?
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var postImageView: UIImageView!{
         didSet {
@@ -93,7 +93,7 @@ class PostViewController: UIViewController {
                             postData = [
                                 "userId":selectedPost.user.id,
                                 "title":title,
-                                "description":description,
+                                        "description":description,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":selectedPost.createdAt ?? FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()
