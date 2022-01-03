@@ -19,7 +19,7 @@ class LandingViewController: UIViewController {
             
         }
     }
-    
+     
     @IBOutlet weak var signInLandingOutlet: UIButton! {
         didSet {
             signInLandingOutlet.setTitle(NSLocalizedString("Signin", tableName: "Localizable", comment: ""), for: .normal)

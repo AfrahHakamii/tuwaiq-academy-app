@@ -156,7 +156,7 @@
             <objects>
                 <viewController id="cdD-BD-3tF" customClass="RegisterViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ShZ-Rs-hvl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-Ga-3lO">
@@ -249,6 +249,8 @@
                         <outlet property="nameTextField" destination="hcF-Ga-3lO" id="sZV-hg-fHs"/>
                         <outlet property="passwordRegisterLabel" destination="Npl-2Q-4zN" id="fk2-es-WLX"/>
                         <outlet property="passwordTextField" destination="lwY-aj-kme" id="OkL-Pt-Nlg"/>
+                        <outlet property="registerOutlet" destination="4bt-XC-fhw" id="MAY-EI-F9r"/>
+                        <outlet property="sginOutlet" destination="0wa-YR-djL" id="UNk-Db-opr"/>
                         <outlet property="userImageView" destination="gHk-0Y-dHc" id="AYc-wA-WB2"/>
                     </connections>
                 </viewController>
@@ -256,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="-2111" y="-1894"/>
         </scene>
-        <!--Item-->
+        <!--Home View Controller-->
         <scene sceneID="1HF-mP-KSt">
             <objects>
                 <viewController id="sKb-5N-52P" customClass="HomeViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
@@ -325,7 +327,6 @@
                         <viewLayoutGuide key="safeArea" id="wkD-fX-TeK"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="YsH-kb-wVG"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ciq-gt-VH7">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="lUx-fP-nmR">
@@ -360,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P3-gA-BwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-1813.0434782608697"/>
+            <point key="canvasLocation" x="1903.2" y="-1813.0434782608697"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="diJ-pt-0B3">
@@ -374,8 +375,8 @@
                                 <rect key="frame" x="67" y="65" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcD-vk-OPO">
-                                <rect key="frame" x="25" y="282" width="59" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Bath" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcD-vk-OPO">
+                                <rect key="frame" x="25" y="282" width="69" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -432,14 +433,16 @@
                     <connections>
                         <outlet property="actionButton" destination="YZu-4o-K5q" id="FKb-CD-ll2"/>
                         <outlet property="bioTextField" destination="hqf-VG-UxO" id="D46-hp-DBX"/>
+                        <outlet property="descriptionOutlet" destination="4Ei-Ne-JIb" id="0P4-DV-MGp"/>
                         <outlet property="postDescriptionTextField" destination="hVU-pm-Guj" id="Qza-Zp-KtS"/>
                         <outlet property="postImageView" destination="q7V-21-BzN" id="dr0-Nb-zGC"/>
                         <outlet property="postTitleTextField" destination="axE-Cu-Ot2" id="XZW-BI-GAx"/>
+                        <outlet property="thebathOutlet" destination="vcD-vk-OPO" id="6yH-ka-NYd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbA-PL-9Tu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.8" y="-1813.0434782608697"/>
+            <point key="canvasLocation" x="2748" y="-1813.0434782608697"/>
         </scene>
         <!--Item-->
         <scene sceneID="pxF-ec-m7Y">
@@ -591,10 +594,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="JYe-39-gXh"/>
                     <connections>
+                        <outlet property="descriptionLabelDetails" destination="nfn-sK-lbh" id="1aC-YS-oUz"/>
                         <outlet property="postCityLabel" destination="iEW-cP-xnC" id="7zR-Uo-RVF"/>
                         <outlet property="postDescriptionLabel" destination="5vJ-J3-PQb" id="C7L-fk-Lql"/>
                         <outlet property="postImageView" destination="LXm-ya-qAw" id="ey8-je-eCM"/>
                         <outlet property="postTitleLabel" destination="3rl-Ng-xv0" id="XrD-xS-YTZ"/>
+                        <outlet property="theBathLabelDetails" destination="kJ5-Mk-ZCx" id="Ndb-OX-Epd"/>
                         <outlet property="userImageView" destination="0my-EP-ryh" id="aZs-oW-aAG"/>
                         <outlet property="usernameView" destination="ST3-mZ-wGU" id="5cl-Cf-KeE"/>
                     </connections>
@@ -608,7 +613,7 @@
             <objects>
                 <viewController id="Nia-eS-B8V" customClass="LoginViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tbw-fD-XHI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slP-TO-F46">
@@ -670,8 +675,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="txc-yg-NUG"/>
                     <connections>
+                        <outlet property="emailLoginLabel" destination="slP-TO-F46" id="Wgg-gN-nur"/>
                         <outlet property="emailTextField" destination="Vyt-Pa-3WJ" id="PxA-3c-g5C"/>
+                        <outlet property="passwordLoginLabel" destination="jr7-Ie-zYF" id="csT-EE-40w"/>
                         <outlet property="passwordTextField" destination="Mq7-em-uWA" id="dwI-Vr-v6w"/>
+                        <outlet property="registerLoginOutlet" destination="JbU-xS-R0N" id="wl0-Wn-RA3"/>
+                        <outlet property="signLoginOutlet" destination="PWj-fQ-MY8" id="KkF-FN-gQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDc-9A-TMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -722,11 +731,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kdp-Qd-YdR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eAd-LQ-CkA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sKb-5N-52P" kind="relationship" relationship="viewControllers" id="DQr-0h-e3u"/>
+                        <segue destination="sFG-l9-ghu" kind="relationship" relationship="viewControllers" id="DQr-0h-e3u"/>
                         <segue destination="bR9-ns-u0j" kind="relationship" relationship="viewControllers" id="Ic7-dx-WUx"/>
                         <segue destination="EfZ-gT-6E4" kind="relationship" relationship="viewControllers" id="dMm-NT-WQX"/>
                     </connections>
@@ -735,11 +745,30 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="-1813.0434782608697"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="sAk-bk-6Ec">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFG-l9-ghu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="YsH-kb-wVG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CtM-z0-mQz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sKb-5N-52P" kind="relationship" relationship="rootViewController" id="69s-tQ-GtR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ku-lg-0ch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="-1813.0434782608697"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8wN-ly-E5I"/>
+        <segue reference="paf-B8-TOg"/>
         <segue reference="Qvh-Zf-Gls"/>
-        <segue reference="kAT-dY-smM"/>
+        <segue reference="Ger-Ee-r7t"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Unknown" width="225" height="225"/>

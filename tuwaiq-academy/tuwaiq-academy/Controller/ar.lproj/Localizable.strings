@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   tuwaiq-academy
 
@@ -17,4 +17,6 @@
 "Register" =  "تسجيل حساب جديد";
 "Signin" =  "تسجيل الدخول";
 "Logout" =  "تسجيل االخروج";
-
+"Add" = "إضافة";
+"TheBath" = "المسار";
+"description" = "الوصف";

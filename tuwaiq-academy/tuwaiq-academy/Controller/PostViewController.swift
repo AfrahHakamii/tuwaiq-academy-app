@@ -11,7 +11,23 @@ class PostViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
     var selectedUserImage:UIImage?
-    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var actionButton: UIButton! {
+        didSet {
+            actionButton.setTitle(NSLocalizedString("Add", tableName: "Localizable", comment: ""), for: .normal)
+            
+        }
+    }
+    
+    @IBOutlet weak var thebathOutlet: UILabel!
+    {   didSet {
+        thebathOutlet.text = "TheBath".localized
+    }
+    }
+    @IBOutlet weak var descriptionOutlet: UILabel!  {   didSet {
+        descriptionOutlet.text = "description".localized
+    }
+    }
+    
     @IBOutlet weak var postImageView: UIImageView!{
         didSet {
             postImageView.isUserInteractionEnabled = true

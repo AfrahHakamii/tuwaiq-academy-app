@@ -10,8 +10,29 @@ import Firebase
 import SwiftUI
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
+    
+    @IBOutlet weak var emailLoginLabel: UILabel! {   didSet {
+        emailLoginLabel.text = "Email".localized
+    }
+    }
+    @IBOutlet weak var passwordLoginLabel: UILabel! {   didSet {
+        passwordLoginLabel.text = "Password".localized
+    }
+    }
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signLoginOutlet: UIButton! {
+        didSet {
+            signLoginOutlet.setTitle(NSLocalizedString("Signin", tableName: "Localizable", comment: ""), for: .normal)
+            
+        }
+    }
+    @IBOutlet weak var registerLoginOutlet: UIButton! {
+        didSet {
+            registerLoginOutlet.setTitle(NSLocalizedString("Register", tableName: "Localizable", comment: ""), for: .normal)
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

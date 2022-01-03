@@ -11,6 +11,7 @@ import Firebase
 class RegisterViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
             userImageView.layer.borderColor = UIColor.systemGray2.cgColor
@@ -27,6 +28,18 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var registerOutlet: UIButton!  {
+        didSet {
+        registerOutlet.setTitle(NSLocalizedString("Register", tableName: "Localizable", comment: ""), for: .normal)
+        
+    }
+}
+    @IBOutlet weak var sginOutlet: UIButton!  {
+        didSet {
+            sginOutlet.setTitle(NSLocalizedString("Signin", tableName: "Localizable", comment: ""), for: .normal)
+            
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel! {   didSet {
         nameLabel.text = "name".localized
     }
@@ -50,6 +63,7 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func handleRegister(_ sender: Any) {
+        
         if let image = userImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.75),
            let name = nameTextField.text,
