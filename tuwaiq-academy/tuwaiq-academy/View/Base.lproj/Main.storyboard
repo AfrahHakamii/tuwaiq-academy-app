@@ -48,6 +48,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="y3Q-lD-ucv"/>
+                    <connections>
+                        <outlet property="registeLandingOutlet" destination="ihF-uY-qdY" id="Bwy-Yf-Zfk"/>
+                        <outlet property="signInLandingOutlet" destination="7mT-Gn-lFh" id="Z80-jG-fle"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLn-5A-fWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,7 +60,7 @@
         <!--Item-->
         <scene sceneID="zf4-2A-K4t">
             <objects>
-                <viewController id="EfZ-gT-6E4" customClass="profileViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EfZ-gT-6E4" customClass="BundleExtention" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gf8-vV-HUS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,17 +99,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Logout"/>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KCA-ff-QEG">
-                                <rect key="frame" x="61" y="470" width="242" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="English"/>
-                                    <segment title="Arabic"/>
-                                </segments>
-                                <connections>
-                                    <action selector="languageChanged:" destination="EfZ-gT-6E4" eventType="valueChanged" id="JCp-qR-kN3"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2I-al-TDs">
                                 <rect key="frame" x="16" y="190" width="86" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -120,13 +113,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bootcamps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-gg-cUC">
-                                <rect key="frame" x="16" y="362" width="87" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwd-XL-bdV">
                                 <rect key="frame" x="16" y="303" width="86" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -134,13 +120,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bootcamps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-gg-cUC">
+                                <rect key="frame" x="16" y="362" width="87" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KCA-ff-QEG">
+                                <rect key="frame" x="66" y="510" width="242" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="en"/>
+                                    <segment title="ar"/>
+                                </segments>
+                                <connections>
+                                    <action selector="languageChanged:" destination="EfZ-gT-6E4" eventType="valueChanged" id="gVy-Up-EcD"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eaO-a9-DK2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="tP0-sM-XfN"/>
                     <connections>
-                        <outlet property="languageSegmentControl" destination="KCA-ff-QEG" id="wuG-Cc-qjj"/>
+                        <outlet property="languageSegmentControl" destination="KCA-ff-QEG" id="MZM-xu-bDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM9-Eb-CTz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,7 +156,7 @@
             <objects>
                 <viewController id="cdD-BD-3tF" customClass="RegisterViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ShZ-Rs-hvl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-Ga-3lO">
@@ -237,16 +241,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rky-6b-3f8"/>
                     <connections>
+                        <outlet property="confirmPassordRegisterLabel" destination="nlz-Er-eNs" id="LJc-fE-UMA"/>
                         <outlet property="confirmPasswordTextField" destination="Ybo-SM-7O1" id="xEu-j9-hpq"/>
+                        <outlet property="emailRegisterLabel" destination="bJX-sD-15Y" id="1tS-vt-Nsx"/>
                         <outlet property="emailTextField" destination="PtW-ea-1Yb" id="Wc2-UN-MAb"/>
+                        <outlet property="nameLabel" destination="tza-TU-EGx" id="5zB-6Z-25n"/>
                         <outlet property="nameTextField" destination="hcF-Ga-3lO" id="sZV-hg-fHs"/>
+                        <outlet property="passwordRegisterLabel" destination="Npl-2Q-4zN" id="fk2-es-WLX"/>
                         <outlet property="passwordTextField" destination="lwY-aj-kme" id="OkL-Pt-Nlg"/>
                         <outlet property="userImageView" destination="gHk-0Y-dHc" id="AYc-wA-WB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JE-hH-sWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2150" y="-1658"/>
+            <point key="canvasLocation" x="-2111" y="-1894"/>
         </scene>
         <!--Item-->
         <scene sceneID="1HF-mP-KSt">
@@ -600,7 +608,7 @@
             <objects>
                 <viewController id="Nia-eS-B8V" customClass="LoginViewController" customModule="tuwaiq_academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tbw-fD-XHI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slP-TO-F46">
@@ -729,9 +737,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="paf-B8-TOg"/>
+        <segue reference="8wN-ly-E5I"/>
         <segue reference="Qvh-Zf-Gls"/>
-        <segue reference="Ger-Ee-r7t"/>
+        <segue reference="kAT-dY-smM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Unknown" width="225" height="225"/>

@@ -22,10 +22,28 @@ class RegisterViewController: UIViewController {
             userImageView.addGestureRecognizer(tabGesture)
         }
     }
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel! {   didSet {
+        nameLabel.text = "name".localized
+    }
+    }
+    @IBOutlet weak var emailRegisterLabel: UILabel! {   didSet {
+        emailRegisterLabel.text = "Email".localized
+    }
+    }
+    @IBOutlet weak var passwordRegisterLabel: UILabel! {   didSet {
+        passwordRegisterLabel.text = "Password".localized
+    }
+    }
+    @IBOutlet weak var confirmPassordRegisterLabel: UILabel! {   didSet {
+        confirmPassordRegisterLabel.text = "confirmPassword".localized
+    }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self

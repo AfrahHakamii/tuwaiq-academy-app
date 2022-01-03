@@ -7,23 +7,21 @@
 
 import UIKit
 
-class profileViewController: UIViewController {
-    @IBOutlet weak var languageSegmentControl: UISegmentedControl!  {
+class BundleExtention: UIViewController {
+    
+    @IBOutlet weak var languageSegmentControl: UISegmentedControl! {
         didSet {
             if let lang = UserDefaults.standard.string(forKey: "currentLanguage") {
                 switch lang {
                 case "ar":
-                    languageSegmentControl.selectedSegmentIndex = 0
-                case "en":
                     languageSegmentControl.selectedSegmentIndex = 1
-                case "fr":
-                    languageSegmentControl.selectedSegmentIndex = 2
+                case "en":
+                    languageSegmentControl.selectedSegmentIndex = 0
                 default:
                     let localLang =  Locale.current.languageCode
-                     if localLang == "ar" {
+                     if localLang == "en" {
                          languageSegmentControl.selectedSegmentIndex = 0
-                     } else if localLang == "fr"{
-                         languageSegmentControl.selectedSegmentIndex = 2
+              
                      }else {
                          languageSegmentControl.selectedSegmentIndex = 1
                      }
@@ -32,10 +30,9 @@ class profileViewController: UIViewController {
             
             }else {
                 let localLang =  Locale.current.languageCode
-                 if localLang == "ar" {
+                UserDefaults.standard.setValue([localLang], forKey: "AppleLanguage")
+                 if localLang == "en" {
                      languageSegmentControl.selectedSegmentIndex = 0
-                 } else if localLang == "fr"{
-                     languageSegmentControl.selectedSegmentIndex = 2
                  }else {
                      languageSegmentControl.selectedSegmentIndex = 1
                  }
@@ -64,7 +61,11 @@ class profileViewController: UIViewController {
         }
     
     }
-    
-    
-
 }
+extension String {
+    var localized: String {
+        
+                return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+            }
+        
+    }
