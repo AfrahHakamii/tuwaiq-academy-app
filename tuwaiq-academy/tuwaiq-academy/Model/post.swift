@@ -4,7 +4,6 @@
 //
 //  Created by Afrah Omar on 24/05/1443 AH.
 //
-
 import Foundation
 import Firebase
 struct Post {

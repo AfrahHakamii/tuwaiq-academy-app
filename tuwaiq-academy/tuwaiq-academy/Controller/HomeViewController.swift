@@ -4,7 +4,6 @@
 //
 //  Created by Afrah Omar on 23/05/1443 AH.
 //
-
 import UIKit
 import Firebase
 class HomeViewController: UIViewController {
@@ -12,69 +11,67 @@ class HomeViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
     var selectedUserImage:UIImage?
-    @IBOutlet weak var postsTableView: UITableView! {
-        didSet {
-            postsTableView.delegate = self
-            postsTableView.dataSource = self
+    @IBOutlet weak var postsTableView: UITableView! {      didSet {
+        postsTableView.delegate = self
+        postsTableView.dataSource = self
+    }
+}
+override func viewDidLoad() {
+    super.viewDidLoad()
+    getPosts()
+    // Do any additional setup after loading the view.
+}
+func getPosts() {
+    let ref = Firestore.firestore()
+    ref.collection("posts").order(by: "createdAt",descending: true).addSnapshotListener { snapshot, error in
+        if let error = error {
+            print("DB ERROR Posts",error.localizedDescription)
         }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getPosts()
-        // Do any additional setup after loading the view.
-    }
-    func getPosts() {
-        let ref = Firestore.firestore()
-        ref.collection("posts").order(by: "createdAt",descending: true).addSnapshotListener { snapshot, error in
-            if let error = error {
-                print("DB ERROR Posts",error.localizedDescription)
-            }
-            if let snapshot = snapshot {
-                snapshot.documentChanges.forEach { diff in
-                    let post = diff.document.data()
-                    switch diff.type {
-                    case .added :
-                        if let userId = post["userId"] as? String {
-                            ref.collection("users").document(userId).getDocument { userSnapshot, error in
-                                if let error = error {
-                                    print("ERROR user Data",error.localizedDescription)
+        if let snapshot = snapshot {
+            snapshot.documentChanges.forEach { diff in
+                let post = diff.document.data()
+                switch diff.type {
+                case .added :
+                    if let userId = post["userId"] as? String {
+                        ref.collection("users").document(userId).getDocument { userSnapshot, error in
+                            if let error = error {
+                                print("ERROR user Data",error.localizedDescription)
+                            }
+                            if let userSnapshot = userSnapshot,
+                               let userData = userSnapshot.data(){
+                                let user = User(dict:userData)
+                                let post = Post(dict:post,id:diff.document.documentID,user:user)
+                                self.posts.insert(post, at: 0)
+                                DispatchQueue.main.async {
+                                    self.postsTableView.reloadData()
                                 }
-                                if let userSnapshot = userSnapshot,
-                                   let userData = userSnapshot.data(){
-                                    let user = User(dict:userData)
-                                    let post = Post(dict:post,id:diff.document.documentID,user:user)
-                                    self.posts.insert(post, at: 0)
-                                    DispatchQueue.main.async {
-                                        self.postsTableView.reloadData()
-                                    }
-                                    
-                                }
+                                
                             }
                         }
-                        case .modified:
-                        let postId = diff.document.documentID
-                        if let currentPost = self.posts.first(where: {$0.id == postId}),
-                           let updateIndex = self.posts.firstIndex(where: {$0.id == postId}){
-                            let newPost = Post(dict:post, id: postId, user: currentPost.user)
-                            self.posts[updateIndex] = newPost
-                            DispatchQueue.main.async {
-                                self.postsTableView.reloadData()
-                            }
+                    }
+                    case .modified:
+                    let postId = diff.document.documentID
+                    if let currentPost = self.posts.first(where: {$0.id == postId}),
+                       let updateIndex = self.posts.firstIndex(where: {$0.id == postId}){
+                        let newPost = Post(dict:post, id: postId, user: currentPost.user)
+                        self.posts[updateIndex] = newPost
+                        DispatchQueue.main.async {
+                            self.postsTableView.reloadData()
                         }
-                    case .removed:
-                        let postId = diff.document.documentID
-                        if let deleteIndex = self.posts.firstIndex(where: {$0.id == postId}){
-                            self.posts.remove(at: deleteIndex)
-                            DispatchQueue.main.async {
-                                self.postsTableView.reloadData()
-                            }
+                    }
+                case .removed:
+                    let postId = diff.document.documentID
+                    if let deleteIndex = self.posts.firstIndex(where: {$0.id == postId}){
+                        self.posts.remove(at: deleteIndex)
+                        DispatchQueue.main.async {
+                            self.postsTableView.reloadData()
                         }
-                        }
+                    }
                     }
                 }
             }
         }
-
+    }
         @IBAction func handleLogout(_ sender: Any) {
             do {
                 try Auth.auth().signOut()

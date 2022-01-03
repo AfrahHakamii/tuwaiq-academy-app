@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameView: UILabel!
+    @IBOutlet weak var postCityLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let selectedPost = selectedPost,
