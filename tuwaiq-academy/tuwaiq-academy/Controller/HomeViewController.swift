@@ -9,6 +9,8 @@ import Firebase
 class HomeViewController: UIViewController {
     var posts = [Post]()
     var selectedPost:Post?
+    var filterdPost: [Post] = []
+    let searchController = UISearchController(searchResultsController: nil)
     var selectedPostImage:UIImage?
     var selectedUserImage:UIImage?
     @IBOutlet weak var postsTableView: UITableView! {      didSet {
@@ -19,6 +21,14 @@ class HomeViewController: UIViewController {
 override func viewDidLoad() {
     super.viewDidLoad()
     getPosts()
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = true
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = "Search"
+    definesPresentationContext = true
+    searchController.searchResultsUpdater = self
+    
+
     // Do any additional setup after loading the view.
 }
 func getPosts() {
@@ -99,13 +109,24 @@ func getPosts() {
             }
         }
     }
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController : UISearchController) {
+        filterdPost = posts.filter({selectedPost in
+            return selectedPost.title.lowercased().contains(searchController.searchBar.text!.lowercased()) ||
+            selectedPost.description.lowercased().contains(searchController.searchBar.text!.lowercased()) ||
+            selectedPost.user.name.lowercased().contains(searchController.searchBar.text!.lowercased())
+        })
+        postsTableView.reloadData()
+    }
+}
     extension HomeViewController: UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return posts.count
+            return  searchController.isActive ?filterdPost.count : posts.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+            let post = searchController.isActive ? filterdPost[indexPath.row] : posts[indexPath.row]
             return cell.configure(with: posts[indexPath.row])
         }
     }
@@ -125,4 +146,6 @@ func getPosts() {
                 performSegue(withIdentifier: "toDetailsVC", sender: self)
             }
         }
-    }
+       
+        }
+    

@@ -47,11 +47,11 @@ class PostViewController: UIViewController {
             postDescriptionTextField.text = selectedPost.description
             bioTextField.text = selectedPost.bio
             postImageView.image = selectedImage
-            actionButton.setTitle("Update Post", for: .normal)
+            actionButton.setTitle("Update Post".localized, for: .normal)
             let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
             self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
-            actionButton.setTitle("Add Post", for: .normal)
+            actionButton.setTitle("Add Post".localized, for: .normal)
             self.navigationItem.rightBarButtonItem = nil
         }
         // Do any additional setup after loading the view.

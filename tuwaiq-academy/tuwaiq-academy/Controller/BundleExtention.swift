@@ -14,16 +14,18 @@ class BundleExtention: UIViewController {
             if let lang = UserDefaults.standard.string(forKey: "currentLanguage") {
                 switch lang {
                 case "ar":
-                    languageSegmentControl.selectedSegmentIndex = 1
-                case "en":
                     languageSegmentControl.selectedSegmentIndex = 0
+                    UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                case "en":
+                    languageSegmentControl.selectedSegmentIndex = 1
+                    UIView.appearance().semanticContentAttribute = .forceRightToLeft
                 default:
                     let localLang =  Locale.current.languageCode
                      if localLang == "en" {
-                         languageSegmentControl.selectedSegmentIndex = 0
+                         languageSegmentControl.selectedSegmentIndex = 1
               
                      }else {
-                         languageSegmentControl.selectedSegmentIndex = 1
+                         languageSegmentControl.selectedSegmentIndex = 0
                      }
                   
                 }

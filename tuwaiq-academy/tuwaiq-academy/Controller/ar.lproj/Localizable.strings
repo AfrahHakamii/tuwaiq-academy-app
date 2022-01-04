@@ -17,6 +17,8 @@
 "Register" =  "تسجيل حساب جديد";
 "Signin" =  "تسجيل الدخول";
 "Logout" =  "تسجيل االخروج";
-"Add" = "إضافة";
+
 "TheBath" = "المسار";
 "description" = "الوصف";
+"Update Post" = "تحديث" ;
+"Add Post" = "اضافه" ;

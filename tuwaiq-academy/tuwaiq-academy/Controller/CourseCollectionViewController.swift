@@ -15,6 +15,7 @@ class CourseCollectionViewController: UIViewController , UICollectionViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionViewCourses.delegate = self
         collectionViewCourses.dataSource = self
         arrCourse.append(Course(photo: UIImage(named: "swift")!, title: "Swift"))
@@ -27,7 +28,12 @@ class CourseCollectionViewController: UIViewController , UICollectionViewDelegat
         arrCourse.append(Course(photo: UIImage(named: "x")!, title: "الحوسبة السحابية"))
         arrCourse.append(Course(photo: UIImage(named: "t")!, title: " لتطوير الالعاب"))
     }
-  
+    
+    
+    @IBAction func linkButton(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://satr.codes/paths/TxrppJSrgx/view")! as URL, options: [:], completionHandler: nil )
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrCourse.count
     }
@@ -49,3 +55,4 @@ struct Course {
     let photo : UIImage
     let title : String
 }
+

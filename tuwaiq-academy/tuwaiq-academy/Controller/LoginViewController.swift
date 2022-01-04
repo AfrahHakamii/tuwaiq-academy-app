@@ -20,7 +20,11 @@ class LoginViewController: UIViewController {
     }
     }
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.isSecureTextEntry = true 
+        }
+    }
     @IBOutlet weak var signLoginOutlet: UIButton! {
         didSet {
             signLoginOutlet.setTitle(NSLocalizedString("Signin", tableName: "Localizable", comment: ""), for: .normal)
