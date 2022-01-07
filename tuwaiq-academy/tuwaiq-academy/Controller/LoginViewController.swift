@@ -11,6 +11,7 @@ import SwiftUI
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var viewLogin: UIView!
     @IBOutlet weak var emailLoginLabel: UILabel! {   didSet {
         emailLoginLabel.text = "Email".localized
     }
@@ -31,6 +32,11 @@ class LoginViewController: UIViewController {
             
         }
     }
+    
+    @IBOutlet weak var label: UILabel! {   didSet {
+        label.text = "You don't have an account".localized
+    }
+    }
     @IBOutlet weak var registerLoginOutlet: UIButton! {
         didSet {
             registerLoginOutlet.setTitle(NSLocalizedString("Register", tableName: "Localizable", comment: ""), for: .normal)
@@ -41,6 +47,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewLogin.layer.shadowColor = UIColor.gray.cgColor
+        viewLogin.layer.shadowOpacity = 1
+        viewLogin.layer.shadowOffset = .zero
+        viewLogin.layer.cornerRadius = 10
+        viewLogin.layer.shadowPath = UIBezierPath(rect: viewLogin.bounds).cgPath
+        viewLogin.layer.shouldRasterize = true
+        self.viewLogin.layer.cornerRadius = 10
+//        self.offersMuneLabel.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
 

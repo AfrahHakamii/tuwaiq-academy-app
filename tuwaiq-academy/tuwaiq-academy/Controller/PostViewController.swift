@@ -37,7 +37,7 @@ class PostViewController: UIViewController {
     }
     @IBOutlet weak var postTitleTextField: UITextField!
     @IBOutlet weak var postDescriptionTextField: UITextField!
-    @IBOutlet weak var bioTextField: UITextField!
+//    @IBOutlet weak var bioTextField: UITextField!
     let activityIndicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class PostViewController: UIViewController {
         let selectedImage = selectedPostImage{
             postTitleTextField.text = selectedPost.title
             postDescriptionTextField.text = selectedPost.description
-            bioTextField.text = selectedPost.bio
+//            bioTextField.text = selectedPost.bio
             postImageView.image = selectedImage
             actionButton.setTitle("Update Post".localized, for: .normal)
             let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))

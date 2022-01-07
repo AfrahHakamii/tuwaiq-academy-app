@@ -13,7 +13,17 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postDescriptionLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView! {
+        didSet {
+            userImageView.layer.borderColor = UIColor.systemGray2.cgColor
+            userImageView.layer.borderWidth = 3.0
+            userImageView.layer.cornerRadius = userImageView.bounds.height / 3
+            userImageView.layer.masksToBounds = true
+            userImageView.isUserInteractionEnabled = true
+//            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+//            userImageView.addGestureRecognizer(tabGesture)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

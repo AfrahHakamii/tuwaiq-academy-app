@@ -10,4 +10,5 @@ import UIKit
 struct Academy {
     var image : UIImage
     var description :String
+    var title : String
 }
