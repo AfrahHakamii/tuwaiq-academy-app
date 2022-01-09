@@ -11,13 +11,17 @@ import SwiftUI
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var signInLabel: UILabel! {   didSet {
+        signInLabel.text = "Sign in".localized
+    }
+    }
     @IBOutlet weak var viewLogin: UIView!
     @IBOutlet weak var emailLoginLabel: UILabel! {   didSet {
-        emailLoginLabel.text = "Email".localized
+        emailLoginLabel.text = "Email:".localized
     }
     }
     @IBOutlet weak var passwordLoginLabel: UILabel! {   didSet {
-        passwordLoginLabel.text = "Password".localized
+        passwordLoginLabel.text = "Password:".localized
     }
     }
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,7 +32,7 @@ class LoginViewController: UIViewController {
     }
     @IBOutlet weak var signLoginOutlet: UIButton! {
         didSet {
-            signLoginOutlet.setTitle(NSLocalizedString("Signin", tableName: "Localizable", comment: ""), for: .normal)
+            signLoginOutlet.setTitle(NSLocalizedString("Sign in", tableName: "Localizable", comment: ""), for: .normal)
             
         }
     }
@@ -43,22 +47,30 @@ class LoginViewController: UIViewController {
             
         }
     }
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewLogin.layer.shadowColor = UIColor.gray.cgColor
-        viewLogin.layer.shadowOpacity = 1
+//        viewLogin.layer.shadowOpacity = 1
         viewLogin.layer.shadowOffset = .zero
         viewLogin.layer.cornerRadius = 10
         viewLogin.layer.shadowPath = UIBezierPath(rect: viewLogin.bounds).cgPath
         viewLogin.layer.shouldRasterize = true
         self.viewLogin.layer.cornerRadius = 10
-//        self.offersMuneLabel.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
     }
 
     
+//    @IBAction func eyePassword(_ sender: AnyObject) {
+//        passwordTextField.isSecureTextEntry.toggle()
+//                    if  passwordTextField.isSecureTextEntry {
+//                        if let image = UIImage(systemName: "eye.fill") {
+//                            sender.setImage(image, for: .normal)
+//                        }
+//                    } else {
+//                        if let image = UIImage(systemName: "eye.slash.fill") {
+//                            sender.setImage(image, for: .normal)
+//                        }
+//                    }
+//                }
     
     @IBAction func handleLogin(_ sender: Any) {
         if let email = emailTextField.text,

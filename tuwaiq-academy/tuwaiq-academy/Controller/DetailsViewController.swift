@@ -27,9 +27,17 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameView: UILabel!
-    @IBOutlet weak var postCityLabel: UILabel!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        postImageView.layer.shadowColor = UIColor.systemGray6.cgColor
+        postImageView.layer.shadowOpacity = 1
+        postImageView.layer.shadowOffset = .zero
+        postImageView.layer.cornerRadius = 10
+        postImageView.layer.shadowPath = UIBezierPath(rect: postImageView.bounds).cgPath
+        postImageView.layer.shouldRasterize = true
+        self.postImageView.layer.cornerRadius = 10
+//            let tabGesture =
         if let selectedPost = selectedPost,
         let selectedImage = selectedPostImage{
             postTitleLabel.text = selectedPost.title

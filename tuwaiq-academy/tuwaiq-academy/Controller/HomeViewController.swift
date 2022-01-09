@@ -18,18 +18,17 @@ class HomeViewController: UIViewController {
         postsTableView.dataSource = self
     }
 }
+    
 override func viewDidLoad() {
     super.viewDidLoad()
     getPosts()
+    
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = true
     searchController.obscuresBackgroundDuringPresentation = false
     searchController.searchBar.placeholder = "Search"
     definesPresentationContext = true
     searchController.searchResultsUpdater = self
-    
-
-    // Do any additional setup after loading the view.
 }
 func getPosts() {
     let ref = Firestore.firestore()
@@ -123,7 +122,6 @@ extension HomeViewController: UISearchResultsUpdating {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return  searchController.isActive ?filterdPost.count : posts.count
         }
-        
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
             let post = searchController.isActive ? filterdPost[indexPath.row] : posts[indexPath.row]

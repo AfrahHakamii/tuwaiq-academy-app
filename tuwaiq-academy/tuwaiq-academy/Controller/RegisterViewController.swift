@@ -9,14 +9,16 @@
 import UIKit
 import Firebase
 class RegisterViewController: UIViewController {
+    
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
-    
+
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
             userImageView.layer.borderColor = UIColor.systemGray2.cgColor
-            userImageView.layer.borderWidth = 3.0
-            userImageView.layer.cornerRadius = userImageView.bounds.height / 2
+            userImageView.layer.borderWidth = 1.0
+            userImageView.layer.cornerRadius = userImageView.bounds.height
+            / 2
             userImageView.layer.masksToBounds = true
             userImageView.isUserInteractionEnabled = true
             let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
@@ -24,6 +26,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var viewRegister: UIView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!{
@@ -45,29 +48,37 @@ class RegisterViewController: UIViewController {
 }
     @IBOutlet weak var sginOutlet: UIButton!  {
         didSet {
-            sginOutlet.setTitle(NSLocalizedString("Signin", tableName: "Localizable", comment: ""), for: .normal)
+            sginOutlet.setTitle(NSLocalizedString("Sign in", tableName: "Localizable", comment: ""), for: .normal)
             
         }
     }
     @IBOutlet weak var nameLabel: UILabel! {   didSet {
-        nameLabel.text = "name".localized
+        nameLabel.text = "Name:".localized
     }
     }
     @IBOutlet weak var emailRegisterLabel: UILabel! {   didSet {
-        emailRegisterLabel.text = "Email".localized
+        emailRegisterLabel.text = "Email:".localized
     }
     }
     @IBOutlet weak var passwordRegisterLabel: UILabel! {   didSet {
-        passwordRegisterLabel.text = "Password".localized
+        passwordRegisterLabel.text = "Password:".localized
     }
     }
     @IBOutlet weak var confirmPassordRegisterLabel: UILabel! {   didSet {
-        confirmPassordRegisterLabel.text = "confirmPassword".localized
+        confirmPassordRegisterLabel.text = "Confirm Password:".localized
     }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewRegister.layer.shadowColor = UIColor.gray.cgColor
+//        viewRegister.layer.shadowOpacity = 1
+        viewRegister.layer.shadowOffset = .zero
+        viewRegister.layer.cornerRadius = 10
+        viewRegister.layer.shadowPath = UIBezierPath(rect: viewRegister.bounds).cgPath
+        viewRegister.layer.shouldRasterize = true
+        self.viewRegister.layer.cornerRadius = 10
+        
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
     }

@@ -20,6 +20,13 @@ class PostCell: UITableViewCell {
             userImageView.layer.cornerRadius = userImageView.bounds.height / 3
             userImageView.layer.masksToBounds = true
             userImageView.isUserInteractionEnabled = true
+            postImageView.layer.shadowColor = UIColor.systemGray6.cgColor
+            postImageView.layer.shadowOpacity = 1
+            postImageView.layer.shadowOffset = .zero
+            postImageView.layer.cornerRadius = 10
+            postImageView.layer.shadowPath = UIBezierPath(rect: postImageView.bounds).cgPath
+            postImageView.layer.shouldRasterize = true
+            self.postImageView.layer.cornerRadius = 10
 //            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
 //            userImageView.addGestureRecognizer(tabGesture)
         }

@@ -20,13 +20,15 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var thebathOutlet: UILabel!
     {   didSet {
-        thebathOutlet.text = "TheBath".localized
+        thebathOutlet.text = "The bath programming language".localized
     }
     }
     @IBOutlet weak var descriptionOutlet: UILabel!  {   didSet {
-        descriptionOutlet.text = "description".localized
+        descriptionOutlet.text = "Description".localized
     }
     }
+    
+    @IBOutlet weak var viewPost: UIView!
     
     @IBOutlet weak var postImageView: UIImageView!{
         didSet {
@@ -41,6 +43,18 @@ class PostViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewPost.layer.shadowColor = UIColor.gray.cgColor
+        viewPost.layer.shadowOffset = .zero
+        viewPost.layer.cornerRadius = 10
+        viewPost.layer.shadowPath = UIBezierPath(rect: viewPost.bounds).cgPath
+        viewPost.layer.shouldRasterize = true
+        self.viewPost.layer.cornerRadius = 10
+        postImageView.layer.shadowColor = UIColor.systemGray6.cgColor
+        postImageView.layer.shadowOffset = .zero
+        postImageView.layer.cornerRadius = 10
+        postImageView.layer.shadowPath = UIBezierPath(rect: postImageView.bounds).cgPath
+        postImageView.layer.shouldRasterize = true
+        self.postImageView.layer.cornerRadius = 10
         if let selectedPost = selectedPost,
         let selectedImage = selectedPostImage{
             postTitleTextField.text = selectedPost.title
