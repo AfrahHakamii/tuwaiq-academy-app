@@ -18,3 +18,19 @@
 "g2" = "Tuwaiq Academy in partnership with Google will deliver training courses as part of the Tuwaiq 1000 Bootcamp initiative.";
 "g3" = "Google";
 "label" = "You don't have an account";
+"swift" = "Swift Camp enables you to build iOS apps and the ability to develop and publish mobile apps on the Apple App Store
+Technologies used: Swift, Swift UI, Firebase" ;
+"swift2" = "Swift";
+"java" = "Camp enables you to design and build integrated web applications using Java";
+"java1" = " Java";
+"kot" = "Intensive Kotlin Boot Camp enables you to build and publish mobile apps on the Android App Store
+Technologies used: Kotlin, SQLite, Room, JUnit, Mockito";
+"kot1" = "Kotlin";
+"py" = "This 12-week intensive Python course is a unique experience that provides you with in-depth experience building and testing web applications";
+"py1" = "Python";
+"js" = "Camp enables you to design and build integrated web applications using JavaScript, React, Node for both Front-end and Back-end
+Technologies used: HTML, CSS, Javascript, React, NodeJS, ExpressJS, MongoDB, Mongoose, Jest";
+"js1" = "JavaScript";
+"c" = "Camp enables you to design and build integrated web applications using #C";
+"c1" = "#C";
+

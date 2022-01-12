@@ -13,7 +13,19 @@ class ProfileViewController: UIViewController {
     var arrAcademy = [Academy]()
     var selectAcademy : Academy?
     
-    @IBOutlet weak var viewCourse: UIView!
+    @IBOutlet weak var viewCourse: UIView!  {
+        didSet{
+            viewCourse.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+            viewCourse.layer.borderWidth = 0
+            viewCourse.layer.cornerRadius = 20
+            viewCourse.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+//            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+            viewCourse.layer.masksToBounds = true
+            viewCourse.isUserInteractionEnabled = true
+        }
+    }
+    
+    @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var imageProfileUser: UIImageView! {
         didSet {
 //            imageProfileUser.layer.borderColor = UIColor.systemGray2.cgColor
@@ -24,6 +36,9 @@ class ProfileViewController: UIViewController {
             imageProfileUser.isUserInteractionEnabled = true
         }
     }
+    
+    @IBOutlet weak var logoutLabel: UIButton!
+    
     @IBOutlet weak var nameUserProfile: UILabel!
     @IBOutlet weak var emailUserProfile: UILabel!
     @IBOutlet weak var uiViewProfile: UIView!
@@ -40,22 +55,23 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiViewProfile.layer.shadowColor = UIColor.gray.cgColor
-//        uiViewProfile.layer.shadowOpacity = 1
-        uiViewProfile.layer.shadowOffset = .zero
-        uiViewProfile.layer.cornerRadius = 10
-        uiViewProfile.layer.shadowPath = UIBezierPath(rect: uiViewProfile.bounds).cgPath
-        uiViewProfile.layer.shouldRasterize = true
-        self.uiViewProfile.layer.cornerRadius = 10
+//        uiViewProfile.layer.shadowColor = UIColor.gray.cgColor
+////        uiViewProfile.layer.shadowOpacity = 1
+//        uiViewProfile.layer.shadowOffset = .zero
+//        uiViewProfile.layer.cornerRadius = 10
+//        uiViewProfile.layer.shadowPath = UIBezierPath(rect: uiViewProfile.bounds).cgPath
+//        uiViewProfile.layer.shouldRasterize = true
+//        self.uiViewProfile.layer.cornerRadius = 10
         
-        viewCourse.layer.shadowColor = UIColor.gray.cgColor
+
+//        imageProfile.layer.shadowColor = UIColor.gray.cgColor
 //        uiViewProfile.layer.shadowOpacity = 1
-        viewCourse.layer.shadowOffset = .zero
-        viewCourse.layer.cornerRadius = 10
-        viewCourse.layer.shadowPath = UIBezierPath(rect: viewCourse.bounds).cgPath
-        viewCourse.layer.shouldRasterize = true
-        self.viewCourse.layer.cornerRadius = 10
-        getUser()
+//        imageProfile.layer.shadowOffset = .zero
+//        imageProfile.layer.cornerRadius = 10
+//        imageProfile.layer.shadowPath = UIBezierPath(rect: imageProfile.bounds).cgPath
+//        imageProfile.layer.shouldRasterize = true
+//        self.imageProfile.layer.cornerRadius = 10
+//        getUser()
         // Do any additional setup after loading the view.
         func getUser() {
             let ref = Firestore.firestore()

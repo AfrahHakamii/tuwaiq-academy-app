@@ -13,15 +13,14 @@ class DetailsViewController: UIViewController {
     var selectedUserImage:UIImage?
     @IBOutlet weak var postDescriptionLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
-    
     @IBOutlet weak var descriptionLabelDetails: UILabel!
     {   didSet {
-        descriptionLabelDetails.text = "description".localized
+        descriptionLabelDetails.text = "Description".localized
    }
    }
     
     @IBOutlet weak var theBathLabelDetails: UILabel!  {   didSet {
-        theBathLabelDetails.text = "TheBath".localized
+        theBathLabelDetails.text = "The bath programming language".localized
     }
     }
     @IBOutlet weak var postImageView: UIImageView!

@@ -21,6 +21,8 @@ class CourseCollectionViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var viewCourse: UIView!
+    @IBOutlet weak var labelCourse: UILabel!
     @IBOutlet weak var imageHeader: UIImageView!
     
     
@@ -34,7 +36,7 @@ class CourseCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageHeader.layer.shadowColor = UIColor.gray.cgColor
-        imageHeader.layer.shadowOpacity = 1
+//        imageHeader.layer.shadowOpacity = 1
         imageHeader.layer.shadowOffset = .zero
         imageHeader.layer.cornerRadius = 10
         imageHeader.layer.shadowPath = UIBezierPath(rect: imageHeader.bounds).cgPath
@@ -47,37 +49,42 @@ class CourseCollectionViewController: UIViewController {
         collectionViewCourses.layer.shadowPath = UIBezierPath(rect: collectionViewCourses.bounds).cgPath
         collectionViewCourses.layer.shouldRasterize = true
         self.collectionViewCourses.layer.cornerRadius = 10
+        
         collectionViewCourses.delegate = self
         collectionViewCourses.dataSource = self
         
-        number = 2222
+        
+//        number = 2222
         
         arrAcademy = [Academy(image: UIImage(named: "ac")!, description: "ac".localized, title: "aca".localized),
+                      Academy(image: UIImage(named: "acc")!, description: "ac3".localized, title: "ac2".localized),
                       Academy(image: UIImage(named: "1000")!, description: "h1000".localized, title: "g1000".localized),
                       Academy(image: UIImage(named: "str")!, description: "str2".localized , title: "str1".localized),
                       Academy(image: UIImage(named: "co")!, description: "co2".localized, title: "co1".localized),
-                      Academy(image: UIImage(named: "tu1")!, description: "g3".localized, title: "g2".localized),
-                      Academy(image: UIImage(named: "ac1")!, description: "ac3".localized, title: "ac2".localized)]
+                      Academy(image: UIImage(named: "gog")!, description: "g3".localized, title: "g2".localized),
+                      Academy(image: UIImage(named: "swift3")!, description: "swift2".localized, title: "swift".localized),
+                      Academy(image: UIImage(named: "java")!, description: "java1".localized, title: "java".localized),
+                      Academy(image: UIImage(named: "k2")!, description: "kot1".localized, title:"kot".localized),
+                      Academy(image: UIImage(named: "python")!, description: "py1".localized, title: "py".localized),
+                      Academy(image: UIImage(named: "c")!, description: "c1".localized, title: "c".localized),
+                      Academy(image: UIImage(named: "j2")!, description: "js1".localized, title: "js".localized),
+        ]
         
         print(" Array in ViewDidLoad : \(arrAcademy)")
     }
         
      
-//    }
-//    @IBAction func linkButton(_ sender: Any) {
-//        UIApplication.shared.open(URL(string: "https://satr.codes/courses/KiQGXOXbXw/view")! as URL, options: [:], completionHandler: nil )
-//    }
-//
-//
-//    @IBAction func linkJava(_ sender: Any) {
-//        UIApplication.shared.open(URL(string: "https://satr.codes/courses/UJpWHpTxcz/view")! as URL, options: [:], completionHandler: nil )
-//    }
-//
-//    @IBAction func linkKotlinButton(_ sender: Any) {
-//        UIApplication.shared.open(URL(string: "https://satr.codes/courses/SBeWZQhIkq/view")! as URL, options: [:], completionHandler: nil )
-//    }
-//}
+    @IBAction func linkButton(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://satr.codes/courses/KiQGXOXbXw/view")! as URL, options: [:], completionHandler: nil )
     }
+    @IBAction func linkJava(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://satr.codes/courses/UJpWHpTxcz/view")! as URL, options: [:], completionHandler: nil )
+    }
+    
+    @IBAction func linkKotlinButton(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://satr.codes/courses/SBeWZQhIkq/view")! as URL, options: [:], completionHandler: nil )
+    }
+}
 
 extension CourseCollectionViewController : UICollectionViewDelegate , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,24 +102,24 @@ extension CourseCollectionViewController : UICollectionViewDelegate , UICollecti
         cell.layer.borderColor = UIColor.white.cgColor
                cell.layer.borderWidth = 2.0
                cell.layer.cornerRadius = 10
-               
-//        cell.backgroundColor = .systemGray4
+
    
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width * 0.3, height: self.view.frame.width * 0.493)
+        return CGSize(width: self.view.frame.width * 0.493, height: self.view.frame.width * 0.45)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0.1
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.1
+        return 1
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 1, left: 2, bottom: 1, right: 2)
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
         selectAcademy = arrAcademy[indexPath.row]
         performSegue(withIdentifier: "VC", sender: self)
     }

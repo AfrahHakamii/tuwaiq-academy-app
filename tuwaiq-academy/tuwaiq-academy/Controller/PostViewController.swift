@@ -30,6 +30,9 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var viewPost: UIView!
     
+    
+    @IBOutlet weak var viewPostHeader: UIView!
+    
     @IBOutlet weak var postImageView: UIImageView!{
         didSet {
             postImageView.isUserInteractionEnabled = true

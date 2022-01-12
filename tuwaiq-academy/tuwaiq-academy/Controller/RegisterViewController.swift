@@ -27,16 +27,26 @@ class RegisterViewController: UIViewController {
     }
     
     @IBOutlet weak var viewRegister: UIView!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.placeholder = "Please enter your name".localized
+        }
+    }
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            emailTextField.placeholder = "Your email address".localized
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet {
             passwordTextField.isSecureTextEntry = true
+            passwordTextField.placeholder = "You Password".localized
         }
     }
     
     @IBOutlet weak var confirmPasswordTextField: UITextField! {
         didSet {
+            confirmPasswordTextField.placeholder = "Confirm Password".localized
             confirmPasswordTextField.isSecureTextEntry = true
         }
     }
@@ -51,6 +61,11 @@ class RegisterViewController: UIViewController {
             sginOutlet.setTitle(NSLocalizedString("Sign in", tableName: "Localizable", comment: ""), for: .normal)
             
         }
+    }
+    
+    @IBOutlet weak var orLabel: UILabel! {   didSet {
+        orLabel.text = "You have an account?".localized
+    }
     }
     @IBOutlet weak var nameLabel: UILabel! {   didSet {
         nameLabel.text = "Name:".localized

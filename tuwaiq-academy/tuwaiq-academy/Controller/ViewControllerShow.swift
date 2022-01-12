@@ -9,10 +9,21 @@ import UIKit
 
 class ViewControllerShow: UIViewController {
     var selectAcademy : Academy?
-    @IBOutlet weak var UIView: UIView!
+    @IBOutlet weak var UIView: UIView!     {
+        didSet{
+            UIView.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+            UIView.layer.borderWidth = 0
+            UIView.layer.cornerRadius = 20
+            UIView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+//            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+            UIView.layer.masksToBounds = true
+            UIView.isUserInteractionEnabled = true
+        }
+    }
     @IBOutlet weak var titleAcademy: UILabel!
     @IBOutlet weak var imageAcademyShow: UIImageView!
-    @IBOutlet weak var descriptionAcademy: UITextView!
+  
+    @IBOutlet weak var descriptionAcademy: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         imageAcademyShow.layer.shadowColor = UIColor.systemGray6.cgColor

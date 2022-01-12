@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     }
 }
     
+    
 override func viewDidLoad() {
     super.viewDidLoad()
     getPosts()
@@ -130,10 +131,11 @@ extension HomeViewController: UISearchResultsUpdating {
     }
     extension HomeViewController: UITableViewDelegate {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 400
+            return 350
         }
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let cell = tableView.cellForRow(at: indexPath) as! PostCell
+            tableView.deselectRow(at: indexPath, animated: true)
             selectedPostImage = cell.postImageView.image
             selectedUserImage = cell.userImageView.image
             selectedPost = posts[indexPath.row]

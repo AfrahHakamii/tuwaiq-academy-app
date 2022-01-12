@@ -24,10 +24,16 @@ class LoginViewController: UIViewController {
         passwordLoginLabel.text = "Password:".localized
     }
     }
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            emailTextField.placeholder = "Your email address".localized
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            passwordTextField.isSecureTextEntry = true 
+            passwordTextField.placeholder = "You Password".localized
+
+            passwordTextField.isSecureTextEntry = true
         }
     }
     @IBOutlet weak var signLoginOutlet: UIButton! {
@@ -38,7 +44,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBOutlet weak var label: UILabel! {   didSet {
-        label.text = "You don't have an account".localized
+        label.text = "You don't have an account?".localized
     }
     }
     @IBOutlet weak var registerLoginOutlet: UIButton! {
@@ -77,6 +83,12 @@ class LoginViewController: UIViewController {
            let password = passwordTextField.text {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                
+                if let error = error {
+                    Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                    print("Registration Auth Error",error.localizedDescription)
+                }
                 if let _ = authResult {
                     if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
                         vc.modalPresentationStyle = .fullScreen

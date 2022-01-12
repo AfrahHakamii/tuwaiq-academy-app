@@ -201,6 +201,7 @@
 				9A5CCA65277B2B9F009D2C01 /* post.swift */,
 				9A1A0D8F2781888D00A49A29 /* Bundle.swift */,
 				9AE3FE3B2785A68F00D2B79E /* Course.swift */,
+				9A2CF646277C5B9D00EA8E89 /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,7 +226,6 @@
 				9AED74B42779FCC1004635CA /* HomeViewController.swift */,
 				9AA5D4D6277B312E007264B2 /* PostViewController.swift */,
 				9AE3FE392785A41000D2B79E /* CourseViewController.swift */,
-				9A2CF646277C5B9D00EA8E89 /* Alert.swift */,
 				9AB4C038278607ED0066E8B2 /* ViewControllerShow.swift */,
 				9AA5D4D8277B4642007264B2 /* DetailsViewController.swift */,
 				9A1B16F42782DC2B006B117A /* Localizable.strings */,

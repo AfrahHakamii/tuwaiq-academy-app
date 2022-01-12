@@ -15,11 +15,14 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
-            userImageView.layer.borderColor = UIColor.systemGray2.cgColor
-            userImageView.layer.borderWidth = 3.0
-            userImageView.layer.cornerRadius = userImageView.bounds.height / 3
+//            imageProfileUser.layer.borderColor = UIColor.systemGray2.cgColor
+            userImageView.layer.borderWidth = 1.0
+            userImageView.layer.cornerRadius = userImageView.bounds.height
+            / 2
             userImageView.layer.masksToBounds = true
             userImageView.isUserInteractionEnabled = true
+        
+
             postImageView.layer.shadowColor = UIColor.systemGray6.cgColor
             postImageView.layer.shadowOpacity = 1
             postImageView.layer.shadowOffset = .zero
