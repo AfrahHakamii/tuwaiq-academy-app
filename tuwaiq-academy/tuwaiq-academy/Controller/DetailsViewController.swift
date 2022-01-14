@@ -30,12 +30,20 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         postImageView.layer.shadowColor = UIColor.systemGray6.cgColor
-        postImageView.layer.shadowOpacity = 1
+//        postImageView.layer.shadowOpacity = 1
         postImageView.layer.shadowOffset = .zero
         postImageView.layer.cornerRadius = 10
         postImageView.layer.shadowPath = UIBezierPath(rect: postImageView.bounds).cgPath
         postImageView.layer.shouldRasterize = true
         self.postImageView.layer.cornerRadius = 10
+        
+        userImageView.layer.borderColor = UIColor.systemGray2.cgColor
+        userImageView.layer.borderWidth = 1.0
+        userImageView.layer.cornerRadius = userImageView.bounds.height
+        / 2
+        userImageView.layer.masksToBounds = true
+        userImageView.isUserInteractionEnabled = true
+    
 //            let tabGesture =
         if let selectedPost = selectedPost,
         let selectedImage = selectedPostImage{

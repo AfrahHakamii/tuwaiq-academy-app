@@ -11,6 +11,7 @@ import SwiftUI
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var eyePassword: UIButton!
     @IBOutlet weak var signInLabel: UILabel! {   didSet {
         signInLabel.text = "Sign in".localized
     }
@@ -55,29 +56,30 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        passwordTextField.rightView = eyePassword
+                passwordTextField.rightViewMode = .whileEditing
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
         viewLogin.layer.shadowColor = UIColor.gray.cgColor
-//        viewLogin.layer.shadowOpacity = 1
         viewLogin.layer.shadowOffset = .zero
         viewLogin.layer.cornerRadius = 10
         viewLogin.layer.shadowPath = UIBezierPath(rect: viewLogin.bounds).cgPath
         viewLogin.layer.shouldRasterize = true
         self.viewLogin.layer.cornerRadius = 10
     }
+    @IBAction func eyePasswordAcation(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+              if passwordTextField.isSecureTextEntry {
+                  if let image = UIImage(systemName: "eye.fill") {
+                      sender.setImage(image, for: .normal)
+                  }
+              } else {
+                  if let image = UIImage(systemName: "eye.slash.fill"){
+                      sender.setImage(image, for: .normal)
+                  }
+              }
 
-    
-//    @IBAction func eyePassword(_ sender: AnyObject) {
-//        passwordTextField.isSecureTextEntry.toggle()
-//                    if  passwordTextField.isSecureTextEntry {
-//                        if let image = UIImage(systemName: "eye.fill") {
-//                            sender.setImage(image, for: .normal)
-//                        }
-//                    } else {
-//                        if let image = UIImage(systemName: "eye.slash.fill") {
-//                            sender.setImage(image, for: .normal)
-//                        }
-//                    }
-//                }
-    
+    }
     @IBAction func handleLogin(_ sender: Any) {
         if let email = emailTextField.text,
            let password = passwordTextField.text {

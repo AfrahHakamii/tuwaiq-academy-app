@@ -125,13 +125,13 @@ extension HomeViewController: UISearchResultsUpdating {
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-            let post = searchController.isActive ? filterdPost[indexPath.row] : posts[indexPath.row]
+//            _ = searchController.isActive ? filterdPost[indexPath.row] : posts[indexPath.row]
             return cell.configure(with: posts[indexPath.row])
         }
     }
     extension HomeViewController: UITableViewDelegate {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 350
+            return 400
         }
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let cell = tableView.cellForRow(at: indexPath) as! PostCell

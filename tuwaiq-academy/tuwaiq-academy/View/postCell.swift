@@ -15,7 +15,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
-//            imageProfileUser.layer.borderColor = UIColor.systemGray2.cgColor
+            userImageView.layer.borderColor = UIColor.systemGray2.cgColor
             userImageView.layer.borderWidth = 1.0
             userImageView.layer.cornerRadius = userImageView.bounds.height
             / 2
@@ -30,8 +30,7 @@ class PostCell: UITableViewCell {
             postImageView.layer.shadowPath = UIBezierPath(rect: postImageView.bounds).cgPath
             postImageView.layer.shouldRasterize = true
             self.postImageView.layer.cornerRadius = 10
-//            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-//            userImageView.addGestureRecognizer(tabGesture)
+
         }
     }
     override func awakeFromNib() {

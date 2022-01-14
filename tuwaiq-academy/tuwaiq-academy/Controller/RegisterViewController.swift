@@ -13,6 +13,8 @@ class RegisterViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
 
+    @IBOutlet weak var eyePasswordOutlet: UIButton!
+    @IBOutlet weak var eyeOutlet: UIButton!
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
             userImageView.layer.borderColor = UIColor.systemGray2.cgColor
@@ -86,8 +88,16 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        passwordTextField.rightView = eyePasswordOutlet
+                passwordTextField.rightViewMode = .whileEditing
+                
+        confirmPasswordTextField.rightView = eyeOutlet
+        confirmPasswordTextField.rightViewMode = .whileEditing
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        
         viewRegister.layer.shadowColor = UIColor.gray.cgColor
-//        viewRegister.layer.shadowOpacity = 1
         viewRegister.layer.shadowOffset = .zero
         viewRegister.layer.cornerRadius = 10
         viewRegister.layer.shadowPath = UIBezierPath(rect: viewRegister.bounds).cgPath
@@ -97,7 +107,35 @@ class RegisterViewController: UIViewController {
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
     }
-    @IBAction func handleRegister(_ sender: Any) {
+    
+    @IBAction func eyePasswordAcation(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+             if passwordTextField.isSecureTextEntry {
+                 if let image = UIImage(systemName: "eye.fill") {
+                     sender.setImage(image, for: .normal)
+                 }
+             } else {
+                 if let image = UIImage(systemName: "eye.slash.fill"){
+                     sender.setImage(image, for: .normal)
+                 }
+             }
+
+    }
+    
+    @IBAction func eyeConfirmPassword(_ sender: UIButton) {
+        confirmPasswordTextField.isSecureTextEntry.toggle()
+            if confirmPasswordTextField.isSecureTextEntry {
+                if let image = UIImage(systemName: "eye.fill") {
+                    sender.setImage(image, for: .normal)
+                }
+            } else {
+                if let image = UIImage(systemName: "eye.slash.fill"){
+                    sender.setImage(image, for: .normal)
+                }
+            }
+
+    }
+    @IBAction func handleRegister(_ sender: Any) { 
         
         if let image = userImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.75),
@@ -161,6 +199,7 @@ class RegisterViewController: UIViewController {
         }
     }
 }
+
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()

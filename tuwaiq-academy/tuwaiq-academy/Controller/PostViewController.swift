@@ -46,6 +46,9 @@ class PostViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        
         viewPost.layer.shadowColor = UIColor.gray.cgColor
         viewPost.layer.shadowOffset = .zero
         viewPost.layer.cornerRadius = 10

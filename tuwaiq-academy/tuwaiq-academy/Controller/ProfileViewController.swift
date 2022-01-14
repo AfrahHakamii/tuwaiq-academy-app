@@ -10,6 +10,8 @@ import Firebase
 
 class ProfileViewController: UIViewController {
     
+    // Var For Course CollectionView ....
+    
     var arrAcademy = [Academy]()
     var selectAcademy : Academy?
     
@@ -19,16 +21,14 @@ class ProfileViewController: UIViewController {
             viewCourse.layer.borderWidth = 0
             viewCourse.layer.cornerRadius = 20
             viewCourse.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-//            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
             viewCourse.layer.masksToBounds = true
             viewCourse.isUserInteractionEnabled = true
         }
     }
-    
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var imageProfileUser: UIImageView! {
         didSet {
-//            imageProfileUser.layer.borderColor = UIColor.systemGray2.cgColor
+            imageProfileUser.layer.borderColor = UIColor.systemGray2.cgColor
             imageProfileUser.layer.borderWidth = 1.0
             imageProfileUser.layer.cornerRadius = imageProfileUser.bounds.height
             / 2
@@ -36,9 +36,11 @@ class ProfileViewController: UIViewController {
             imageProfileUser.isUserInteractionEnabled = true
         }
     }
-    
-    @IBOutlet weak var logoutLabel: UIButton!
-    
+    @IBOutlet weak var logoutLabel: UIButton!  {
+        didSet {
+            logoutLabel.setTitle(NSLocalizedString("Logout", tableName: "Localizable", comment: ""), for: .normal)
+        }
+    }
     @IBOutlet weak var nameUserProfile: UILabel!
     @IBOutlet weak var emailUserProfile: UILabel!
     @IBOutlet weak var uiViewProfile: UIView!
@@ -55,24 +57,29 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        uiViewProfile.layer.shadowColor = UIColor.gray.cgColor
-////        uiViewProfile.layer.shadowOpacity = 1
-//        uiViewProfile.layer.shadowOffset = .zero
-//        uiViewProfile.layer.cornerRadius = 10
-//        uiViewProfile.layer.shadowPath = UIBezierPath(rect: uiViewProfile.bounds).cgPath
-//        uiViewProfile.layer.shouldRasterize = true
-//        self.uiViewProfile.layer.cornerRadius = 10
+        //         Shadow For UIView Profile ....
         
-
-//        imageProfile.layer.shadowColor = UIColor.gray.cgColor
-//        uiViewProfile.layer.shadowOpacity = 1
-//        imageProfile.layer.shadowOffset = .zero
-//        imageProfile.layer.cornerRadius = 10
-//        imageProfile.layer.shadowPath = UIBezierPath(rect: imageProfile.bounds).cgPath
-//        imageProfile.layer.shouldRasterize = true
-//        self.imageProfile.layer.cornerRadius = 10
-//        getUser()
-        // Do any additional setup after loading the view.
+        uiViewProfile.layer.shadowColor = UIColor.gray.cgColor
+        uiViewProfile.layer.shadowOffset = .zero
+        uiViewProfile.layer.cornerRadius = 10
+        uiViewProfile.layer.shadowPath = UIBezierPath(rect: uiViewProfile.bounds).cgPath
+        uiViewProfile.layer.shouldRasterize = true
+        self.uiViewProfile.layer.cornerRadius = 10
+        
+        //         Shadow For UIImage Profile .....
+        
+        imageProfile.layer.shadowColor = UIColor.gray.cgColor
+        imageProfile.layer.shadowOffset = .zero
+        imageProfile.layer.cornerRadius = 10
+        imageProfile.layer.shadowPath = UIBezierPath(rect: imageProfile.bounds).cgPath
+        imageProfile.layer.shouldRasterize = true
+        self.imageProfile.layer.cornerRadius = 10
+        
+        
+        getUser()
+        
+        // Funcation add data User in Profile ...
+        
         func getUser() {
             let ref = Firestore.firestore()
             if let currentUser = Auth.auth().currentUser{
@@ -95,40 +102,38 @@ class ProfileViewController: UIViewController {
         
         
     }
+    
+    //     Link YouTube For Tuwaiq Academy ...
+    
     @IBAction func linkYouTubeButton(_ sender: Any) {
         UIApplication.shared.open(URL(string: "https://www.youtube.com/channel/UC_pOwgeaVK7bg3z7fJB5N8w")! as URL, options: [:], completionHandler: nil )
-        
-        
     }
+    
+    //     Link Web For Tuwaiq Academy ...
+    
     @IBAction func linkWebButton(_ sender: Any) {
         UIApplication.shared.open(URL(string: "https://tuwaiq.edu.sa/#bootcamps")! as URL, options: [:], completionHandler: nil )
         
         
     }
+    
+    //     Link Twitter For Tuwaiq Academy ...
+    
     @IBAction func linkTwitterButton(_ sender: Any) {
         UIApplication.shared.open(URL(string: "https://twitter.com/tuwaiqacademy?lang=ar")! as URL, options: [:], completionHandler: nil )
         
         
     }
+    
+    //     Link Linkedin For Tuwaiq Academy ...
+    
     @IBAction func linkLinkedinButton(_ sender: Any) {
         UIApplication.shared.open(URL(string: "https://www.linkedin.com/company/tuwaiqacademy/")! as URL, options: [:], completionHandler: nil )
         
         
     }
     
-    @IBAction func linkButton(_ sender: Any)
-        {
-                UIApplication.shared.open(URL(string: "https://satr.codes/courses/KiQGXOXbXw/view")! as URL, options: [:], completionHandler: nil )
-            }
-        
-        
-    
-    @IBAction func linkJava(_ sender: Any) {
-                UIApplication.shared.open(URL(string: "https://satr.codes/courses/UJpWHpTxcz/view")! as URL, options: [:], completionHandler: nil )
-            }
-        
-    
-    @IBAction func linkKotlinButton(_ sender: Any) {
-                UIApplication.shared.open(URL(string: "https://satr.codes/courses/SBeWZQhIkq/view")! as URL, options: [:], completionHandler: nil )
-            }
 }
+
+
+
