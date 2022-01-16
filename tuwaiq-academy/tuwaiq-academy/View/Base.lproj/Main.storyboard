@@ -499,7 +499,7 @@
                     <navigationItem key="navigationItem" id="Ciq-gt-VH7">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="dCT-wW-eV6">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="B3N-FL-ZyU">
-                                <rect key="frame" x="276" y="5" width="83" height="34.5"/>
+                                <rect key="frame" x="313.5" y="5" width="45.5" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="Color-1"/>
                                 <state key="normal" title="Button"/>
@@ -756,7 +756,7 @@
                                     <constraint firstAttribute="width" constant="291" id="7Sr-hi-uc9"/>
                                     <constraint firstAttribute="height" constant="128" id="Z05-9n-BeH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -918,7 +918,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="play.circle.fill" catalog="system" title=""/>
                                         <connections>
-                                            <action selector="linkButton:" destination="Ra4-fE-Y7z" eventType="touchUpInside" id="Lhj-KD-b52"/>
+                                            <action selector="linkYouTubeButton:" destination="Ra4-fE-Y7z" eventType="touchUpInside" id="YJg-KJ-jvq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWv-bg-egZ">
@@ -1499,7 +1499,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="paf-B8-TOg"/>
-        <segue reference="Qvh-Zf-Gls"/>
+        <segue reference="obJ-MD-KCS"/>
         <segue reference="Ger-Ee-r7t"/>
     </inferredMetricsTieBreakers>
     <resources>

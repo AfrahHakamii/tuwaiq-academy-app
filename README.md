@@ -2,6 +2,7 @@
 
 ## Description
 
+The idea of the application for Tuwaiq Academy and trainee can share their projects in bootcamp in the app
 
 ## Demo
 ![](lightEN.gif)

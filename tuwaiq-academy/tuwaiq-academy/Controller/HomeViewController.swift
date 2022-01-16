@@ -38,50 +38,68 @@ func getPosts() {
             print("DB ERROR Posts",error.localizedDescription)
         }
         if let snapshot = snapshot {
+            print("POST CANGES:",snapshot.documentChanges.count)
             snapshot.documentChanges.forEach { diff in
-                let post = diff.document.data()
+                let postData = diff.document.data()
                 switch diff.type {
                 case .added :
-                    if let userId = post["userId"] as? String {
+                    
+                    if let userId = postData["userId"] as? String {
                         ref.collection("users").document(userId).getDocument { userSnapshot, error in
                             if let error = error {
                                 print("ERROR user Data",error.localizedDescription)
+                                
                             }
                             if let userSnapshot = userSnapshot,
                                let userData = userSnapshot.data(){
                                 let user = User(dict:userData)
-                                let post = Post(dict:post,id:diff.document.documentID,user:user)
-                                self.posts.insert(post, at: 0)
-                                DispatchQueue.main.async {
-                                    self.postsTableView.reloadData()
+                                let post = Post(dict:postData,id:diff.document.documentID,user:user)
+                                self.postsTableView.beginUpdates()
+                                if snapshot.documentChanges.count != 1 {
+                                    self.posts.append(post)
+                                  
+                                    self.postsTableView.insertRows(at: [IndexPath(row:self.posts.count - 1,section: 0)],with: .automatic)
+                                }else {
+                                    self.posts.insert(post,at:0)
+                                  
+                                    self.postsTableView.insertRows(at: [IndexPath(row: 0,section: 0)],with: .automatic)
                                 }
+                              
+                                self.postsTableView.endUpdates()
+                                
                                 
                             }
                         }
                     }
-                    case .modified:
+                case .modified:
                     let postId = diff.document.documentID
                     if let currentPost = self.posts.first(where: {$0.id == postId}),
                        let updateIndex = self.posts.firstIndex(where: {$0.id == postId}){
-                        let newPost = Post(dict:post, id: postId, user: currentPost.user)
+                        let newPost = Post(dict:postData, id: postId, user: currentPost.user)
                         self.posts[updateIndex] = newPost
-                        DispatchQueue.main.async {
-                            self.postsTableView.reloadData()
-                        }
+                     
+                            self.postsTableView.beginUpdates()
+                            self.postsTableView.deleteRows(at: [IndexPath(row: updateIndex,section: 0)], with: .left)
+                            self.postsTableView.insertRows(at: [IndexPath(row: updateIndex,section: 0)],with: .left)
+                            self.postsTableView.endUpdates()
+                        
                     }
                 case .removed:
                     let postId = diff.document.documentID
                     if let deleteIndex = self.posts.firstIndex(where: {$0.id == postId}){
                         self.posts.remove(at: deleteIndex)
-                        DispatchQueue.main.async {
-                            self.postsTableView.reloadData()
-                        }
-                    }
+                      
+                            self.postsTableView.beginUpdates()
+                            self.postsTableView.deleteRows(at: [IndexPath(row: deleteIndex,section: 0)], with: .automatic)
+                            self.postsTableView.endUpdates()
+                        
                     }
                 }
             }
         }
     }
+}
+    
         @IBAction func handleLogout(_ sender: Any) {
             do {
                 try Auth.auth().signOut()
@@ -125,7 +143,7 @@ extension HomeViewController: UISearchResultsUpdating {
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-//            _ = searchController.isActive ? filterdPost[indexPath.row] : posts[indexPath.row]
+            _ = searchController.isActive ? filterdPost[indexPath.row] : posts[indexPath.row]
             return cell.configure(with: posts[indexPath.row])
         }
     }
